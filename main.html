@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubiks Cube Solver</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .cube {
+            /* height: ; */
+            width: 100%;
+        }
+        .cube-container {
+            display: flex;
+            justify-content: center;
+
+        }
+        /* @keyframes example {
+            0%   {transform: scale(1);}
+            50%  {transform: scale(1.1);}
+            100% {transform: scale(1);}
+        }
+        .btn {
+            
+        } */
+        .sq {
+            margin: 2px;
+            height: 100px;
+            width: 100px;
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        .sq-blue {
+            border: 2px solid black;
+            background-color: #00BFFF; 
+        }
+        .sq-red {
+            border: 2px solid black;
+            background-color: red; 
+        }
+        .sq-green {
+            border: 2px solid black;
+            background-color: #00FF00;  
+        }
+        .sq-white {
+            border: 2px solid black;
+            background-color: rgb(234, 226, 226); 
+        }
+        .sq-orange {
+            border: 2px solid black;
+            background-color: orange; 
+        }
+        .sq-yellow {
+            border: 2px solid black;
+            background-color: yellow; 
+        }
+
+        .commands {
+            margin: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .shuffle {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            width: 35vh;
+            height: 70px;
+            border: 2px solid black;
+            border-radius: 2px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .solve {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            width: 35vh;
+            height: 70px;
+            border: 2px solid black;
+            border-radius: 2px;
+            background-color: #ff91ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            margin: 1rem;
+        }
+        </style>
+        <script>
+            function rotateRed() {
+                var res = fetch('/red');
+            }
+            function rotateBlue() {
+                var res = fetch('/blue');
+            }
+            function rotateGreen() {
+                var res = fetch('/green');
+            }
+            function rotateOrange() {
+                var res = fetch('/orange');
+            }
+            function rotateWhite() {
+                var res = fetch('/white');
+            }
+            function rotateYellow() {
+                var res = fetch('/yellow');
+            }
+            function shuffleFunc() {
+                var res = fetch('/shuffle');
+            }
+            function solveFunc() {
+                var res = fetch('/solve');
+            }
+        </script>
+</head>
+<body>
+    <div class="header">
+        <h1 style="text-align:center; margin:2rem;">Rubik's Cube Solver</h1>
+        <h3 style="text-align:right; margin:1rem;">Tinkering Lab Project</h3>
+    </div>
+    <div class="cube">
+        <div class="cube-container">
+            <div class="sq"></div>
+            <div class="sq sq-yellow" onclick="rotateYellow();">Yellow</div>
+            <div class="sq"></div>
+            <div class="sq"></div>
+        </div>
+        <div class="cube-container">
+            <div class="sq sq-red" onclick="rotateRed();">Red</div>
+            <div class="sq sq-green" onclick="rotateGreen();">Green</div>
+            <div class="sq sq-orange" onclick="rotateOrange();">Orange</div>
+            <div class="sq sq-blue" onclick="rotateBlue();">Blue</div>
+        </div>
+        <div class="cube-container">
+            <div class="sq"></div>
+            <div class="sq sq-white" onclick="rotateWhite();">White</div>
+            <div class="sq"></div>
+            <div class="sq"></div>
+        </div>
+
+    </div>
+    <div class="commands">
+        <div class="shuffle" onclick="shuffleFunc();">Random Shuffle</div>
+        <div class="solve" onclick="solveFunc();">Start Solving</div>
+    </div>
+    <hr style="border: 1px solid black;">
+    <div class="footer">
+        This is a demonstration website built specifically 
+        for controlling our Rubik's Cube Solver Robot for 
+        our Tinkering lab project.
+    </div>
+
+</body>
+</html>
